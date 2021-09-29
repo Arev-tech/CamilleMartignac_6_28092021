@@ -1,4 +1,4 @@
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 
 const sauceSchema = mongoose.Schema({
     userId: { type: String, required: true },
@@ -14,4 +14,4 @@ const sauceSchema = mongoose.Schema({
     usersDisliked: { type: [String] },
 })
 
-module.exports = mongoose.model('Sauces', sauceSchema);
+module.exports = mongoose.model('Sauce', sauceSchema);
