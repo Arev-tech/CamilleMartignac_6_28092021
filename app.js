@@ -1,16 +1,17 @@
 const express = require('express');
-const bodyParser = require ('body-parser');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 
 const saucesRoutes = require('./routes/Sauces')
 const userRoutes = require('./routes/user');
 
-mongoose.connect('mongodb+srv://camcam:coucou@cluster0.emgsy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-  { useNewUrlParser: true,
-    useUnifiedTopology: true })
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
+mongoose.connect('mongodb+srv://camcam:coucou@cluster0.emgsy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(() => console.log('Connexion à MongoDB réussie !'))
+    .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 const app = express();
 
