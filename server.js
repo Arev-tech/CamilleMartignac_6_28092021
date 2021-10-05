@@ -1,6 +1,7 @@
 const http = require('http');
 const app = require('./app');
 
+//---- vérifier la valeur du port fournie ----//
 const normalizePort = val => {
     const port = parseInt(val, 10);
 
@@ -13,8 +14,11 @@ const normalizePort = val => {
     return false;
 };
 const port = normalizePort(process.env.PORT || '3000');
+
+//---- attribuer le nom du paramètre à la valeur ----//
 app.set('port', port);
 
+//---- traitement des erreurs ----//
 const errorHandler = error => {
     if (error.syscall !== 'listen') {
         throw error;
@@ -43,5 +47,5 @@ server.on('listening', () => {
     const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + port;
     console.log('Listening on ' + bind);
 });
-
+//---- Création d'une écoute sur le port défini ----//
 server.listen(port);

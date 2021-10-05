@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//---- Déclaration de notre schéma pour les sauces ----//
 const sauceSchema = mongoose.Schema({
     userId: {
         type: String,
@@ -45,4 +46,6 @@ const sauceSchema = mongoose.Schema({
     },
 })
 
+
+//---------- Exporter pour pouvoir utiliser le schéma dans d'autres fichiers ---------//
 module.exports = mongoose.model('Sauce', sauceSchema);

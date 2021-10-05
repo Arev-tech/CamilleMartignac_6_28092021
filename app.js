@@ -6,6 +6,7 @@ const path = require('path');
 const saucesRoutes = require('./routes/Sauces')
 const userRoutes = require('./routes/user');
 
+//---- Connexion à la base de donnée MongoDB ----//
 mongoose.connect('mongodb+srv://camcam:coucou@cluster0.emgsy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -15,6 +16,7 @@ mongoose.connect('mongodb+srv://camcam:coucou@cluster0.emgsy.mongodb.net/myFirst
 
 const app = express();
 
+//---- Paramètres CORS pour toutes les routes  ----//
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -24,6 +26,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
+//---- configurer les middlewares  ----//
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/sauces', saucesRoutes);
 app.use('/api/auth', userRoutes);
