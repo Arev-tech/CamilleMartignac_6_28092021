@@ -8,27 +8,27 @@ const sauceSchema = mongoose.Schema({
     },
     name: {
         type: String,
-        required: true
+        required: [true, 'Enter a name.'],
     },
     manufacturer: {
         type: String,
-        required: true
+        required: [true, 'Enter a manufacter.'],
     },
     description: {
         type: String,
-        required: true
+        required: [true, 'Enter a description.'],
     },
     mainPepper: {
         type: String,
-        required: true
+        required: [true, 'Enter a mainPepper.'],
     },
     imageUrl: {
         type: String,
-        required: true
+        required: [true, 'Load a picture'],
     },
     heat: {
         type: Number,
-        required: true
+        required: [true, 'Enter a heat.'],
     },
     likes: {
         type: Number,
