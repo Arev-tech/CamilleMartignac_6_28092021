@@ -2,12 +2,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
+const dotenv = require("dotenv");
+dotenv.config();
 
+const MY_MONGOOSE_DATABASE = process.env.DATABASE
 const saucesRoutes = require('./routes/Sauces')
 const userRoutes = require('./routes/user');
 
 //---- Connexion à la base de donnée MongoDB ----//
-mongoose.connect('mongodb+srv://camcam:coucou@cluster0.emgsy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect(MY_MONGOOSE_DATABASE, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
