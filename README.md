@@ -9,4 +9,4 @@
 <ul>
 <li>Cloner le repository suivant: https://github.com/OpenClassrooms-Student-Center/Web-Developer-P6</li>
 <li>Effectuer npm install dans le dossier frontend</li>
-<li>Effectuer node server</li>
+<li>Effectuer npm start, ça va lancer l'application de recherche</li>
