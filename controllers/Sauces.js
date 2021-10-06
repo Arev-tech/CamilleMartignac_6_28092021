@@ -126,8 +126,7 @@ exports.likeOrDislike = (req, res, next) => {
             .catch(error => res.status(400).json({
                 error
             }));
-    }
-    else if (req.body.like === -1) { // il s'agit d'un dislike //
+    } else if (req.body.like === -1) { // il s'agit d'un dislike //
         //---- Modifie les (dis)likes ---//
         Sauce.updateOne({
                 _id: req.params.id
@@ -149,8 +148,7 @@ exports.likeOrDislike = (req, res, next) => {
             .catch(error => res.status(400).json({
                 error
             }));
-    }
-    else { // il s'agit d'une annulation //
+    } else { // il s'agit d'une annulation //
         //---- Modifie les (dis)likes ---//
         Sauce.findOne({
                 _id: req.params.id
@@ -177,8 +175,7 @@ exports.likeOrDislike = (req, res, next) => {
                         .catch(error => res.status(400).json({
                             error
                         }));
-                }
-                else if (sauce.usersDisliked.includes(req.body.userId)) { //si il s'agit d'annuler un dislike
+                } else if (sauce.usersDisliked.includes(req.body.userId)) { //si il s'agit d'annuler un dislike
                     //---- Modifie les (dis)likes ---//
                     Sauce.updateOne({
                             _id: req.params.id
