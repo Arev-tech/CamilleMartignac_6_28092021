@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
 //---- Déclaration de notre schéma pour les sauces ----//
 const sauceSchema = mongoose.Schema({

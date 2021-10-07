@@ -115,7 +115,7 @@ exports.likeOrDislike = (req, res, next) => {
                     usersLiked: req.body.userId
                 }
             })
-            .then(() => res.status(200).json({
+            .then((sauce) => res.status(200).json({
                 message: 'Like ajouté !'
             }))
             .catch(error => res.status(400).json({
@@ -132,7 +132,7 @@ exports.likeOrDislike = (req, res, next) => {
                     usersDisliked: req.body.userId
                 }
             })
-            .then(() => res.status(200).json({
+        .then((sauce) => res.status(200).json({
                 message: 'Dislike ajouté !'
             }))
             .catch(error => res.status(400).json({

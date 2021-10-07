@@ -5,12 +5,15 @@ const path = require('path');
 const dotenv = require("dotenv");
 dotenv.config();
 
-const MY_MONGOOSE_DATABASE = process.env.DATABASE
+const MONGOOSE_URI = process.env.DATABASE
 const saucesRoutes = require('./routes/Sauces')
 const userRoutes = require('./routes/user');
 
+//---- si vous voulez utiliser une autre base de donnée modifiez la valeur de MONGOOSE_URI ci-dessous ----//
+
+
 //---- Connexion à la base de donnée MongoDB ----//
-mongoose.connect(MY_MONGOOSE_DATABASE, {
+mongoose.connect(MONGOOSE_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
