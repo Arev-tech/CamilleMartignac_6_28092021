@@ -6,18 +6,15 @@ const dotenv = require("dotenv");
 const mongooseExpressErrorHandler = require('mongoose-express-error-handler') ;
 dotenv.config();
 
-const MONGOOSE_URI = process.env.DATABASE
+let MONGOOSE_URI = process.env.DATABASE
 const saucesRoutes = require('./routes/Sauces')
 const userRoutes = require('./routes/user');
 
-//---- si vous voulez utiliser une autre base de donnée modifiez la valeur de MONGOOSE_URI ci-dessous ----//
+//---- si vous voulez utiliser une autre base de donnée modifiez la valeur de MONGOOSE_URI ci-dessous avec votre chaine de connexion, n'oubliez pas de remplacer <password> par votre mot de passe ----//
 
 
 //---- Connexion à la base de donnée MongoDB ----//
-mongoose.connect(MONGOOSE_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
+mongoose.connect(MONGOOSE_URI)
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
