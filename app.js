@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const dotenv = require("dotenv");
-const mongooseExpressErrorHandler = require ( ' mongoose-express-error-handler ' ) ;
+const mongooseExpressErrorHandler = require('mongoose-express-error-handler') ;
 dotenv.config();
 
 const MONGOOSE_URI = process.env.DATABASE
