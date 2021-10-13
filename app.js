@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const dotenv = require("dotenv");
+const mongooseExpressErrorHandler = require ( ' mongoose-express-error-handler ' ) ;
 dotenv.config();
 
 const MONGOOSE_URI = process.env.DATABASE
@@ -31,7 +32,7 @@ app.use((req, res, next) => {
 });
 
 app.use(bodyParser.json());
-
+app.use(mongooseExpressErrorHandler);
 //---- configurer les middlewares  ----//
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/sauces', saucesRoutes);
