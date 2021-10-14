@@ -1,8 +1,9 @@
 <h1>Projet 6 - Piiquante - Openclassrooms</h1>
 <h2>Backend</h2>
 <ul>
-<li>Coner ce repository</li>
+<li>Cloner ce repository</li>
 <li>Effectuer npm install dans le dossier backend</li>
+<li>Créer un fichier .env dans le dossier Backend selon le fichier .env.example</li>
 <li>Effectuer nodemon server</li>
 </ul>
 <h2>Frontend</h2>
