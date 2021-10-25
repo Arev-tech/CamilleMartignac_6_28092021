@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const dotenv = require("dotenv");
 const mongooseExpressErrorHandler = require('mongoose-express-error-handler') ;
+const  rateLimit  =  require ( "express-rate-limit" ) ;
 dotenv.config();
 
 let MONGOOSE_URI = process.env.DATABASE
@@ -19,6 +20,14 @@ mongoose.connect(MONGOOSE_URI)
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 const app = express();
+const  limiteur  =  rateLimit ( { 
+  windowMs : 5  *  60  *  1000 ,  // 5 minutes 
+  max : 10  // limite chaque IP à 10 requêtes par windowMs 
+} ) ;
+
+// s'applique à toutes les demandes authentification
+app.use("/api/auth", limiteur) ;
+app.use(helmet());
 
 //---- Paramètres CORS pour toutes les routes  ----//
 app.use((req, res, next) => {

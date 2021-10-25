@@ -37,7 +37,7 @@ exports.createSauce = (req, res, next) => {
         imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     });
     //---- sauvergarde de la sauce dans la base de donnée ----//
-    sauce.save()
+    sauce.save()    
         .then(() => res.status(201).json({
             message: 'Objet enregistré'
         }))
